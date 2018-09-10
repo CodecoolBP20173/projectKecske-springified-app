@@ -1,4 +1,7 @@
 package com.projectmanager.model;
 
-public class AchievementsModel {
+public enum AchievementsModel {
+    YOURFIRSTTASK,
+    FIVETASKINAROW,
+    TENTASKMILESTONE
 }

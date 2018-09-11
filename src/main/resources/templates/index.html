@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Goat Project Manager Pro</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/custom.css" />
+</head>
+<header id="login_header" th:insert="${session.user} != null ? ~{header.html::header_div} : ~{}"></header>
+<body class="index">
+    <h1>Goat Project Manager Pro</h1>
+    <div class="btn">
+        <a th:href="@{http://localhost:8080/create_team}">
+        <button class="button button1">Create Team</button>
+        </a>
+        <a th:href="@{http://localhost:8080/login}">
+            <button class="button button1">Login</button>
+        </a>
+        <a th:href="@{http://localhost:8080/logout}">
+            <button class="button button1">Logout</button>
+        </a>
+        <a th:href="@{http://localhost:8080/registration}">
+            <button class="button button1">Register</button>
+        </a>
+    </div>
+    <h2>Users</h2>
+    <table class="table">
+        <tr>
+            <th>Title</th>
+            <th>User name</th>
+            <th>email</th>
+            <th>Team</th>
+            <th>Score</th>
+        </tr>
+                <tr th:each="user : ${users}">
+                <td th:text="${user.title}"></td>
+                <td th:text="${user.name}"></td>
+                    <td th:text="${user.email}"></td>
+                <td th:text="${user.getTeam()} != null ? ${user.getTeam().getName()} : '-'"></td>
+                <td th:text="${user.score}"></td>
+        </tr>
+    </table>
+    <br>
+    <h2>Teams</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>team name</th>
+            <th>leader</th>
+            <th>project</th>
+        </tr>
+        </thead>
+        <tr th:each="team : ${teams}">
+            <td th:text="${team.name}"></td>
+            <td th:text="${team.getTeamLeader().getName()}"></td>
+            <td th:text="${team.getProject()} != null ? ${team.getProject().getName()} : '-'"></td>
+        </tr>
+    </table>
+</body>
+</html>

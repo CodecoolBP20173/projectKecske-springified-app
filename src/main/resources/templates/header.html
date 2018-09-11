@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<div th:fragment="header_div">
+    <div th:text="'logged in as ' + ${session.user.getName()}"></div>
+</div>
+
+</body>
+
+</html>

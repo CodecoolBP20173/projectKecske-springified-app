@@ -14,14 +14,19 @@ import org.springframework.stereotype.Component;
 @Component
 public class Initializer {
 
+
+    private ProjectRepository projectRepository;
+    private TaskRepository taskRepository;
+    private TeamRepository teamRepository;
+    private UserRepository userRepository;
+
     @Autowired
-    ProjectRepository projectRepository;
-    @Autowired
-    TaskRepository taskRepository;
-    @Autowired
-    TeamRepository teamRepository;
-    @Autowired
-    UserRepository userRepository;
+    public Initializer(ProjectRepository projectRepository, TaskRepository taskRepository, TeamRepository teamRepository, UserRepository userRepository) {
+        this.projectRepository = projectRepository;
+        this.taskRepository = taskRepository;
+        this.teamRepository = teamRepository;
+        this.userRepository = userRepository;
+    }
 
     @Bean
     public CommandLineRunner initialize() {

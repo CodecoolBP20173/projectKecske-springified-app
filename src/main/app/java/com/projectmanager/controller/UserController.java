@@ -12,7 +12,7 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping("/index")
+    @GetMapping("/")
     public String listUsers(Model model) {
         model.addAttribute("users", userRepository.findAll());
         return "index";

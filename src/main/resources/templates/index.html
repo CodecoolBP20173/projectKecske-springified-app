@@ -24,18 +24,15 @@
     <h2>Users</h2>
     <table class="table">
         <tr>
-            <th>Title</th>
             <th>User name</th>
             <th>email</th>
-            <th>Team</th>
-            <th>Score</th>
         </tr>
-                <tr th:each="user : ${users}">
+        <tr th:each="user : ${users}">
                 <td th:text="${user.name}"></td><td th:text="${user.email}"></td>
         </tr>
     </table>
     <br>
-    <h2>Teams</h2>
+    <!--<h2>Teams</h2>
     <table class="table">
         <thead>
         <tr>
@@ -49,6 +46,6 @@
             <td th:text="${team.getTeamLeader().getName()}"></td>
             <td th:text="${team.getProject()} != null ? ${team.getProject().getName()} : '-'"></td>
         </tr>
-    </table>
+    </table>-->
 </body>
 </html>

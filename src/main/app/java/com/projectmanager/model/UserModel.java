@@ -17,19 +17,17 @@ public class UserModel {
     @Column(unique = true)
     private String email;
 
-    private int score;
-    private String title = "Rookie";
-
     @ManyToOne
     private TeamModel team;
 
     public UserModel() {
     }
 
-    public UserModel(String name, String password, String email) {
+    public UserModel(String name, String hashedPassword, String email) {
         this.name = name;
-        this.hashedPassword = password;
+        this.hashedPassword = hashedPassword;
         this.email = email;
+        this.team = null;
     }
 
     public Integer getId() {
@@ -64,21 +62,6 @@ public class UserModel {
         this.email = email;
     }
 
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
 
     public TeamModel getTeam() {
         return team;
@@ -95,8 +78,6 @@ public class UserModel {
                 ", name='" + name + '\'' +
                 ", password='" + hashedPassword + '\'' +
                 ", email='" + email + '\'' +
-                ", score=" + score +
-                ", title='" + title + '\'' +
                 ", team='" + (team == null ? '-' : team.getName()) +
                 '}';
     }

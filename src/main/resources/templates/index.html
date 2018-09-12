@@ -24,7 +24,7 @@
     <h2>Users</h2>
     <table class="table">
         <tr>
-            <th>User teamName</th>
+            <th>User name</th>
             <th>email</th>
         </tr>
         <tr th:each="user : ${users}">
@@ -36,13 +36,12 @@
     <table class="table">
         <thead>
         <tr>
-            <th>team teamName</th>
+            <th>Team name</th>
             <!--<th>leader</th>
             <th>project</th>-->
         </tr>
         </thead>
         <tr th:each="team : ${teams}">
-            <td th:text="${team.id}"></td>
             <td th:text="${team.teamName}"></td>
             <!--<td th:text="${team.getTeamLeader().getTeamName()}"></td>
             <td th:text="${team.getProject()} != null ? ${team.getProject().getTeamName()} : '-'"></td>-->

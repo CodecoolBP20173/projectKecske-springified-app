@@ -11,7 +11,7 @@ public class TeamModel {
     @GeneratedValue
     private Integer id;
 
-    private String name;
+    private String teamName;
 
     @ManyToOne
     private ProjectModel project;
@@ -33,23 +33,23 @@ public class TeamModel {
     public TeamModel() {
     }
 
-    public TeamModel(String name) {
-        this.name = name;
+    public TeamModel(String teamName) {
+        this.teamName = teamName;
     }
 
-    public void addMember(UserModel usr){
+    public void addTeamMember(UserModel usr){
         teamMembers.add(usr);
     }
 
-    public void addMember(List<UserModel> usrs){
+    public void addTeamMember(List<UserModel> usrs){
         teamMembers.addAll(usrs);
     }
 
-    public void removeMember(UserModel usr){
+    public void removeTeamMember(UserModel usr){
         teamMembers.remove(usr);
     }
 
-    public void removeMember(List<UserModel> usrs){
+    public void removeTeamMember(List<UserModel> usrs){
         teamMembers.removeAll(usrs);
     }
 
@@ -61,12 +61,12 @@ public class TeamModel {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTeamName() {
+        return teamName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
     }
 
     public List<UserModel> getTeamMembers() {

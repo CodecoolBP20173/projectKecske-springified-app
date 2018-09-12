@@ -78,7 +78,7 @@ public class UserModel {
                 ", name='" + name + '\'' +
                 ", password='" + hashedPassword + '\'' +
                 ", email='" + email + '\'' +
-                ", team='" + (team == null ? '-' : team.getName()) +
+                ", team='" + (team == null ? '-' : team.getTeamName()) +
                 '}';
     }
 }

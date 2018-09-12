@@ -4,31 +4,31 @@
     <title>Goat Project Manager Pro</title>
     <link rel="stylesheet" type="text/css" href="/css/custom.css" />
 </head>
-<header id="login_header" th:insert="${session.user} != null ? ~{header.html::header_div} : ~{}"></header>
+<!--<header id="login_header" th:insert="${session.user} != null ? ~{header.html::header_div} : ~{}"></header>-->
 <body class="index">
     <h1>Goat Project Manager Pro</h1>
     <div class="btn">
-        <a th:href="@{http://localhost:8080/create_team}">
+        <a th:href="@{http://localhost:9999/create_team}">
         <button class="button button1">Create Team</button>
         </a>
-        <a th:href="@{http://localhost:8080/login}">
+        <a th:href="@{http://localhost:9999/login}">
             <button class="button button1">Login</button>
         </a>
-        <a th:href="@{http://localhost:8080/logout}">
+        <a th:href="@{http://localhost:9999/logout}">
             <button class="button button1">Logout</button>
         </a>
-        <a th:href="@{http://localhost:8080/registration}">
+        <a th:href="@{http://localhost:9999/registration}">
             <button class="button button1">Register</button>
         </a>
     </div>
     <h2>Users</h2>
     <table class="table">
         <tr>
-            <th>User name</th>
+            <th>User teamName</th>
             <th>email</th>
         </tr>
         <tr th:each="user : ${users}">
-                <td th:text="${user.name}"></td><td th:text="${user.email}"></td>
+               <!-- <td th:text="${user.teamName}"></td><td th:text="${user.email}"></td>-->
         </tr>
     </table>
     <br>
@@ -36,15 +36,16 @@
     <table class="table">
         <thead>
         <tr>
-            <th>team name</th>
+            <th>team teamName</th>
             <!--<th>leader</th>
             <th>project</th>-->
         </tr>
         </thead>
         <tr th:each="team : ${teams}">
-            <td th:text="${team.name}"></td>
-            <!--<td th:text="${team.getTeamLeader().getName()}"></td>
-            <td th:text="${team.getProject()} != null ? ${team.getProject().getName()} : '-'"></td>-->
+            <td th:text="${team.id}"></td>
+            <td th:text="${team.teamName}"></td>
+            <!--<td th:text="${team.getTeamLeader().getTeamName()}"></td>
+            <td th:text="${team.getProject()} != null ? ${team.getProject().getTeamName()} : '-'"></td>-->
         </tr>
     </table>
 </body>

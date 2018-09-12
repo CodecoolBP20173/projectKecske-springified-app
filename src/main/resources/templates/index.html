@@ -32,20 +32,20 @@
         </tr>
     </table>
     <br>
-    <!--<h2>Teams</h2>
+    <h2>Teams</h2>
     <table class="table">
         <thead>
         <tr>
             <th>team name</th>
-            <th>leader</th>
-            <th>project</th>
+            <!--<th>leader</th>
+            <th>project</th>-->
         </tr>
         </thead>
         <tr th:each="team : ${teams}">
             <td th:text="${team.name}"></td>
-            <td th:text="${team.getTeamLeader().getName()}"></td>
-            <td th:text="${team.getProject()} != null ? ${team.getProject().getName()} : '-'"></td>
+            <!--<td th:text="${team.getTeamLeader().getName()}"></td>
+            <td th:text="${team.getProject()} != null ? ${team.getProject().getName()} : '-'"></td>-->
         </tr>
-    </table>-->
+    </table>
 </body>
 </html>

@@ -24,18 +24,11 @@
     <h2>Users</h2>
     <table class="table">
         <tr>
-            <th>Title</th>
             <th>User name</th>
             <th>email</th>
-            <th>Team</th>
-            <th>Score</th>
         </tr>
-                <tr th:each="user : ${users}">
-                <td th:text="${user.title}"></td>
-                <td th:text="${user.name}"></td>
-                    <td th:text="${user.email}"></td>
-                <td th:text="${user.getTeam()} != null ? ${user.getTeam().getName()} : '-'"></td>
-                <td th:text="${user.score}"></td>
+        <tr th:each="user : ${users}">
+                <td th:text="${user.name}"></td><td th:text="${user.email}"></td>
         </tr>
     </table>
     <br>
@@ -44,14 +37,14 @@
         <thead>
         <tr>
             <th>team name</th>
-            <th>leader</th>
-            <th>project</th>
+            <!--<th>leader</th>
+            <th>project</th>-->
         </tr>
         </thead>
         <tr th:each="team : ${teams}">
             <td th:text="${team.name}"></td>
-            <td th:text="${team.getTeamLeader().getName()}"></td>
-            <td th:text="${team.getProject()} != null ? ${team.getProject().getName()} : '-'"></td>
+            <!--<td th:text="${team.getTeamLeader().getName()}"></td>
+            <td th:text="${team.getProject()} != null ? ${team.getProject().getName()} : '-'"></td>-->
         </tr>
     </table>
 </body>

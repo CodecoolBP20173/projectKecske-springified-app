@@ -9,7 +9,7 @@
 <header id="login_header" th:insert="${session.user} != null ? ~{header.html::header_div} : ~{}"></header>
 <body>
     <form id="team_form" target="/create_team" method="post">
-        <input type="text" name="name" placeholder="teamname">
+        <input type="text" name="teamName" placeholder="teamname">
         <button type="submit">Create team</button>
     </form>
 </body>

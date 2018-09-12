@@ -1,23 +1,29 @@
 package com.projectmanager.controller;
 
-import com.projectmanager.repository.TeamRepository;
-import com.projectmanager.repository.UserRepository;
+import com.projectmanager.model.TeamModel;
+import com.projectmanager.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class TeamController {
 
     @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
-    private TeamRepository teamRepository;
+    TeamService teamService;
 
     @GetMapping("/create_team")
     public String teamForm() {
         return "team_form";
     }
 
+    @PostMapping("/create_team")
+    public String addNewTeam(@ModelAttribute TeamModel teamModel) {
+        teamService.addTeam(teamModel);
+        return "redirect:/";
+    }
 }

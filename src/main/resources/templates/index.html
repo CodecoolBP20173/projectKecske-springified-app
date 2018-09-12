@@ -2,7 +2,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Goat Project Manager Pro</title>
-    <link rel="stylesheet" type="text/css" href="/static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="/css/custom.css" />
 </head>
 <header id="login_header" th:insert="${session.user} != null ? ~{header.html::header_div} : ~{}"></header>
 <body class="index">
@@ -45,6 +45,18 @@
             <td th:text="${team.name}"></td>
             <!--<td th:text="${team.getTeamLeader().getName()}"></td>
             <td th:text="${team.getProject()} != null ? ${team.getProject().getName()} : '-'"></td>-->
+        </tr>
+    </table>
+
+    <h2>Projects</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Project name</th>
+        </tr>
+        </thead>
+        <tr th:each="project : ${projects}">
+            <td th:text="${project.name}"></td>
         </tr>
     </table>
 </body>

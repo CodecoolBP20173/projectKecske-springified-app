@@ -25,7 +25,7 @@ public class LoginService {
         String hashed = user.getHashedPassword();
 
         if (user == null) {
-            return "/login";
+            return "login";
         } else {
             if (user.getHashedPassword() != null) {
                 isMatchingPassword = checkPassword(password, hashed);
@@ -36,7 +36,7 @@ public class LoginService {
             session.setAttribute("user", user);
             return "redirect:/";
         } else {
-            return "/login";
+            return "login";
         }
     }
 

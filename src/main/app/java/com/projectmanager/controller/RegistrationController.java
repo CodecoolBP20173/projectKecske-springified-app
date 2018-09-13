@@ -19,7 +19,7 @@ public class RegistrationController {
         newUser.setEmail(email);
         newUser.setHashedPassword(password);
         registrationService.registerUser(newUser);
-        return "redirect:/";
+        return "redirect:/login";
     }
 
     @GetMapping("/registration")

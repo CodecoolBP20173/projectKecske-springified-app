@@ -11,8 +11,7 @@ public class RegistrationService {
     @Autowired
     UserRepository userRepository;
 
-    public String registerUser(UserModel user) {
+    public void  registerUser(UserModel user) {
         userRepository.save(user);
-        return "OK";
     }
 }

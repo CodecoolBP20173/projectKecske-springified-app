@@ -7,7 +7,7 @@
 <header id="login_header" th:insert="${session.user} != null ? ~{header.html::header_div} : ~{}"></header>
 <body class="index">
     <h1>Goat Project Manager Pro</h1>
-    <div th:if="${session.user} == null">
+    <div th:if="${session.user} != null">
     <div class="btn">
         <a th:href="@{http://localhost:9999/create_team}">
         <button class="button button1">Create Team</button>
@@ -46,7 +46,7 @@
     </table>
     </div>
 
-    <div th:if="${session.user} != null" >
+    <div th:if="${session.user} == null" >
         <div class="welcomeText">
             <h1>Welcome!</h1>
             <h2>The most goaty Project manager in the world</h2>

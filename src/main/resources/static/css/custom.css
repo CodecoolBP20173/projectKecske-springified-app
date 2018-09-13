@@ -3,16 +3,24 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: right;
-    background-color: #b9afad;
+    background-color: cyan;
 }
 
 h1 {
     color: #223e05;
 }
 
+h2 {
+    color: #223e05;
+}
+
+h3 {
+    color: #223e05;
+}
 
 .btn {
     align-content: right;
+    float: right;
 }
 
 .btn > a{
@@ -30,6 +38,13 @@ tr:hover {background-color: #cfcfcf;}
 table {
     padding: 50px;
     width: 50px;
+}
+
+.auth{
+    float:right;
+}
+.welcomeText {
+    float: left;
 }
 
 .button {

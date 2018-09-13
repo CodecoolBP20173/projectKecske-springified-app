@@ -39,6 +39,7 @@ public class UserModel {
         this.name = name;
         this.hashedPassword = password;
         this.email = email;
+        this.team = null;
     }
 
     public Integer getId() {
@@ -88,8 +89,7 @@ public class UserModel {
                 ", name='" + name + '\'' +
                 ", password='" + hashedPassword + '\'' +
                 ", email='" + email + '\'' +
-                ", team='" + (team == null ? '-' : team.getName()) +
+                ", team='" + (team == null ? '-' : team.getTeamName()) +
                 '}';
     }
-
 }

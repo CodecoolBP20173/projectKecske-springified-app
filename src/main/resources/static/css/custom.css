@@ -3,7 +3,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: right;
-    background-color: #00ff99;
+    background-color: cyan;
 }
 
 h1 {
@@ -20,6 +20,7 @@ h3 {
 
 .btn {
     align-content: right;
+    float: right;
 }
 
 .btn > a{

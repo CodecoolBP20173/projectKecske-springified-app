@@ -1,5 +1,6 @@
 package com.projectmanager.config;
 
+import com.projectmanager.model.ProjectModel;
 import com.projectmanager.model.TeamModel;
 import com.projectmanager.model.UserModel;
 import com.projectmanager.repository.ProjectRepository;
@@ -41,6 +42,8 @@ public class Initializer {
             teamRepository.save(new TeamModel("div2"));
             teamRepository.save(new TeamModel("div3"));
             teamRepository.save(new TeamModel("div4"));
+
+            projectRepository.save(new ProjectModel("project name"));
         };
     }
 }

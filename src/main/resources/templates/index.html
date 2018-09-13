@@ -47,5 +47,17 @@
             <td th:text="${team.getProject()} != null ? ${team.getProject().getTeamName()} : '-'"></td>-->
         </tr>
     </table>
+
+    <h2>Projects</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Project name</th>
+        </tr>
+        </thead>
+        <tr th:each="project : ${projects}">
+            <td th:text="${project.name}"></td>
+        </tr>
+    </table>
 </body>
 </html>

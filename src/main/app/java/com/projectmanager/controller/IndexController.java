@@ -1,5 +1,6 @@
 package com.projectmanager.controller;
 
+import com.projectmanager.repository.ProjectRepository;
 import com.projectmanager.repository.TeamRepository;
 import com.projectmanager.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +17,14 @@ public class IndexController {
     @Autowired
     private TeamRepository teamRepository;
 
+    @Autowired
+    private ProjectRepository projectRepository;
+
     @GetMapping("/")
     public String listUsers(Model model) {
         model.addAttribute("users", userRepository.findAll());
         model.addAttribute("teams", teamRepository.findAll());
+        model.addAttribute("projects", projectRepository.findAll());
         return "index";
     }
 }

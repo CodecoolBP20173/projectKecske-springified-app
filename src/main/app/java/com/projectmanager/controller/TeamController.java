@@ -24,4 +24,5 @@ public class TeamController {
         teamService.addTeam(teamModel);
         return "redirect:/";
     }
+
 }

@@ -2,6 +2,9 @@ package com.projectmanager.model;
 import org.mindrot.jbcrypt.BCrypt;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class UserModel {
@@ -11,11 +14,20 @@ public class UserModel {
     @GeneratedValue
     private Integer id;
 
+    @NotNull
+    @NotEmpty
     private String name;
+
+    @NotNull
+    @NotEmpty
     private String hashedPassword;
 
+    @Email
+    @NotNull
+    @NotEmpty
     @Column(unique = true)
     private String email;
+
 
     @ManyToOne
     private TeamModel team;
@@ -23,9 +35,9 @@ public class UserModel {
     public UserModel() {
     }
 
-    public UserModel(String name, String hashedPassword, String email) {
+    public UserModel(String name, String password, String email) {
         this.name = name;
-        this.hashedPassword = hashedPassword;
+        this.hashedPassword = password;
         this.email = email;
         this.team = null;
     }
@@ -61,7 +73,6 @@ public class UserModel {
     public void setEmail(String email) {
         this.email = email;
     }
-
 
     public TeamModel getTeam() {
         return team;

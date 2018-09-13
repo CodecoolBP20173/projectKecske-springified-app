@@ -11,7 +11,4 @@ public class ProjectController {
     @Autowired
     ProjectRepository repository;
 
-//    @GetMapping("/projects")
-//
-//
 }

@@ -63,14 +63,19 @@
     </div>
 
     <div th:if="${session.user} == null" >
-
-        <h1>Welcome to the one and only Goat Project manager in the world!</h1>
+        <div class="welcomeText">
+            <h1>Welcome!</h1>
+            <h2>The most goaty Project manager in the world</h2>
+            <h3>Used by no one ever.</h3>
+        </div>
+        <div class="auth">
         <a th:href="@{http://localhost:9999/login}">
             <button class="button button1">Login</button>
         </a>
         <a th:href="@{http://localhost:9999/registration}">
             <button class="button button1">Register</button>
         </a>
+        </div>
     </div>
 
 </body>

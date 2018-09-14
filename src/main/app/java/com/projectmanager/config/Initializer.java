@@ -4,7 +4,6 @@ import com.projectmanager.model.ProjectModel;
 import com.projectmanager.model.TeamModel;
 import com.projectmanager.model.UserModel;
 import com.projectmanager.repository.ProjectRepository;
-import com.projectmanager.repository.TaskRepository;
 import com.projectmanager.repository.TeamRepository;
 import com.projectmanager.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,14 +16,12 @@ public class Initializer {
 
 
     private ProjectRepository projectRepository;
-    private TaskRepository taskRepository;
     private TeamRepository teamRepository;
     private UserRepository userRepository;
 
     @Autowired
-    public Initializer(ProjectRepository projectRepository, TaskRepository taskRepository, TeamRepository teamRepository, UserRepository userRepository) {
+    public Initializer(ProjectRepository projectRepository, TeamRepository teamRepository, UserRepository userRepository) {
         this.projectRepository = projectRepository;
-        this.taskRepository = taskRepository;
         this.teamRepository = teamRepository;
         this.userRepository = userRepository;
     }

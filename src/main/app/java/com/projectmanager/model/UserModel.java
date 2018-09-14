@@ -37,7 +37,7 @@ public class UserModel {
 
     public UserModel(String name, String password, String email) {
         this.name = name;
-        this.hashedPassword = password;
+        setHashedPassword(password);
         this.email = email;
         this.team = null;
     }
